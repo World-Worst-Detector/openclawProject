@@ -1,0 +1,65 @@
+{
+  "model": "SVM (RBF)",
+  "metrics": {
+    "accuracy": 0.7402597402597403,
+    "f1": 0.6,
+    "roc_auc": 0.7963888888888889
+  },
+  "stability": {
+    "cv_roc_auc_scores": [
+      0.8225925925925925,
+      0.8422222222222222,
+      0.8196296296296296,
+      0.8145283018867925,
+      0.8062264150943396
+    ],
+    "cv_roc_auc_mean": 0.8210398322851153,
+    "cv_roc_auc_std": 0.01195768151897278
+  },
+  "feature_importance": [
+    {
+      "feature": "Glucose",
+      "importance_mean": 0.10579629629629625,
+      "importance_std": 0.027875574757095282
+    },
+    {
+      "feature": "Age",
+      "importance_mean": 0.034916666666666644,
+      "importance_std": 0.013168147934597155
+    },
+    {
+      "feature": "BMI",
+      "importance_mean": 0.027981481481481475,
+      "importance_std": 0.011560495738868437
+    },
+    {
+      "feature": "DiabetesPedigreeFunction",
+      "importance_mean": 0.01987962962962962,
+      "importance_std": 0.013739102802446236
+    },
+    {
+      "feature": "Pregnancies",
+      "importance_mean": 0.01951851851851848,
+      "importance_std": 0.016800328235084688
+    },
+    {
+      "feature": "Insulin",
+      "importance_mean": 0.013351851851851832,
+      "importance_std": 0.00769018133003955
+    },
+    {
+      "feature": "SkinThickness",
+      "importance_mean": -0.0035648148148148427,
+      "importance_std": 0.005317709561401792
+    },
+    {
+      "feature": "BloodPressure",
+      "importance_mean": -0.004685185185185198,
+      "importance_std": 0.005906246257646827
+    }
+  ],
+  "artifacts": {
+    "feature_importance_plot": "/workspaces/openclawProject/data/diabetes_analysis/svm_feature_importance.png",
+    "roc_curve_plot": "/workspaces/openclawProject/data/diabetes_analysis/svm_roc_curve.png"
+  }
+}
