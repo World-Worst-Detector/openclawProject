@@ -1,0 +1,28 @@
+[00:06:56.834] Server  ERROR   ⨯ Error: Cannot find module 'next/dist/client/components/builtin/global-not-found'
+Require stack:
+- /workspaces/openclawProject/node_modules/next/dist/server/dev/on-demand-entry-handler.js
+- /workspaces/openclawProject/node_modules/next/dist/server/dev/hot-reloader-turbopack.js
+- /workspaces/openclawProject/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /workspaces/openclawProject/node_modules/next/dist/server/lib/router-server.js
+- /workspaces/openclawProject/node_modules/next/dist/server/lib/start-server.js
+[00:06:56.955] Server  ERROR   Error: Cannot find module 'next/dist/pages/_error'
+Require stack:
+- /workspaces/openclawProject/node_modules/next/dist/server/dev/on-demand-entry-handler.js
+- /workspaces/openclawProject/node_modules/next/dist/server/dev/hot-reloader-turbopack.js
+- /workspaces/openclawProject/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /workspaces/openclawProject/node_modules/next/dist/server/lib/router-server.js
+- /workspaces/openclawProject/node_modules/next/dist/server/lib/start-server.js
+[00:06:57.079] Server  ERROR   ⨯ Error: Cannot find module 'next/dist/pages/_error'
+Require stack:
+- /workspaces/openclawProject/node_modules/next/dist/server/dev/on-demand-entry-handler.js
+- /workspaces/openclawProject/node_modules/next/dist/server/dev/hot-reloader-turbopack.js
+- /workspaces/openclawProject/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /workspaces/openclawProject/node_modules/next/dist/server/lib/router-server.js
+- /workspaces/openclawProject/node_modules/next/dist/server/lib/start-server.js
+[00:06:57.172] Server  ERROR   Error: Cannot find module 'next/dist/pages/_error'
+Require stack:
+- /workspaces/openclawProject/node_modules/next/dist/server/dev/on-demand-entry-handler.js
+- /workspaces/openclawProject/node_modules/next/dist/server/dev/hot-reloader-turbopack.js
+- /workspaces/openclawProject/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /workspaces/openclawProject/node_modules/next/dist/server/lib/router-server.js
+- /workspaces/openclawProject/node_modules/next/dist/server/lib/start-server.js
