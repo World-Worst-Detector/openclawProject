@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Activity, Bell, Camera, HeartPulse, Home, PlusCircle, Salad, Users, Waves } from "lucide-react";
+import { Activity, Bell, Camera, HeartPulse, Home, PlusCircle, Salad, Users, Waves, X } from "lucide-react";
 
 type Tab = "home" | "log" | "crew";
 
@@ -22,6 +22,7 @@ const events: EventItem[] = [
 
 export default function Page() {
   const [tab, setTab] = useState<Tab>("home");
+  const [showCarbModal, setShowCarbModal] = useState(false);
   const glucose = 132;
   const delta = +7;
 
@@ -75,7 +76,12 @@ export default function Page() {
                   </div>
 
                   <div className="mt-4 grid grid-cols-2 gap-3">
-                    <QuickCard icon={<Camera className="h-5 w-5" />} title="拍照估碳" desc="识别食物碳水" />
+                    <QuickCard
+                      icon={<Camera className="h-5 w-5" />}
+                      title="拍照估碳"
+                      desc="识别食物碳水"
+                      onClick={() => setShowCarbModal(true)}
+                    />
                     <QuickCard icon={<PlusCircle className="h-5 w-5" />} title="记录胰岛素" desc="快速录入剂量" />
                     <QuickCard icon={<Salad className="h-5 w-5" />} title="添加餐食" desc="早餐/午餐/晚餐" />
                     <QuickCard icon={<Activity className="h-5 w-5" />} title="同步运动" desc="读取 Health 数据" />
@@ -119,13 +125,57 @@ export default function Page() {
           </div>
         </section>
       </div>
+
+      {showCarbModal && (
+        <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/50 p-4">
+          <div className="w-full max-w-sm rounded-2xl bg-white p-4 shadow-2xl">
+            <div className="mb-3 flex items-center justify-between">
+              <h3 className="text-lg font-semibold text-slate-900">拍照估碳</h3>
+              <button onClick={() => setShowCarbModal(false)} className="rounded-md p-1 text-slate-500 hover:bg-slate-100">
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+
+            <div className="rounded-xl border-2 border-dashed border-cyan-300 bg-cyan-50 p-4 text-center">
+              <Camera className="mx-auto h-8 w-8 text-cyan-600" />
+              <p className="mt-2 text-sm font-medium text-slate-800">上传/拍摄餐食照片</p>
+              <p className="text-xs text-slate-500">示例：米饭 + 鸡胸肉 + 西兰花</p>
+            </div>
+
+            <div className="mt-4 rounded-xl bg-slate-50 p-3">
+              <p className="text-sm font-semibold text-slate-900">AI 识别结果（示例）</p>
+              <ul className="mt-2 space-y-1 text-sm text-slate-600">
+                <li>米饭（约 120g）→ 碳水 33g</li>
+                <li>西兰花（约 80g）→ 碳水 5g</li>
+                <li>鸡胸肉（约 100g）→ 碳水 0g</li>
+              </ul>
+              <p className="mt-3 text-base font-bold text-cyan-700">总估算碳水：38g</p>
+            </div>
+
+            <div className="mt-4 grid grid-cols-2 gap-2">
+              <button className="rounded-lg border border-slate-300 px-3 py-2 text-sm font-medium text-slate-700">重拍</button>
+              <button className="rounded-lg bg-cyan-600 px-3 py-2 text-sm font-semibold text-white">保存到日志</button>
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }
 
-function QuickCard({ icon, title, desc }: { icon: React.ReactNode; title: string; desc: string }) {
+function QuickCard({
+  icon,
+  title,
+  desc,
+  onClick,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  desc: string;
+  onClick?: () => void;
+}) {
   return (
-    <button className="rounded-xl bg-white p-3 text-left shadow-sm transition hover:shadow">
+    <button onClick={onClick} className="rounded-xl bg-white p-3 text-left shadow-sm transition hover:shadow">
       <div className="text-cyan-600">{icon}</div>
       <p className="mt-2 text-sm font-semibold text-slate-900">{title}</p>
       <p className="text-xs text-slate-500">{desc}</p>
