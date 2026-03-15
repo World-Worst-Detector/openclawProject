@@ -1,0 +1,106 @@
+{
+  "overview": {
+    "rows": 768,
+    "columns": 9,
+    "column_names": [
+      "Pregnancies",
+      "Glucose",
+      "BloodPressure",
+      "SkinThickness",
+      "Insulin",
+      "BMI",
+      "DiabetesPedigreeFunction",
+      "Age",
+      "Outcome"
+    ],
+    "dtypes": {
+      "Pregnancies": "int64",
+      "Glucose": "int64",
+      "BloodPressure": "int64",
+      "SkinThickness": "int64",
+      "Insulin": "int64",
+      "BMI": "float64",
+      "DiabetesPedigreeFunction": "float64",
+      "Age": "int64",
+      "Outcome": "int64"
+    },
+    "duplicate_rows": 0,
+    "missing_values": {
+      "Pregnancies": 0,
+      "Glucose": 0,
+      "BloodPressure": 0,
+      "SkinThickness": 0,
+      "Insulin": 0,
+      "BMI": 0,
+      "DiabetesPedigreeFunction": 0,
+      "Age": 0,
+      "Outcome": 0
+    }
+  },
+  "top_correlations_with_outcome": [
+    {
+      "feature": "Glucose",
+      "corr": 0.4946502590810323
+    },
+    {
+      "feature": "BMI",
+      "corr": 0.3136804821984413
+    },
+    {
+      "feature": "Insulin",
+      "corr": 0.3034542520056762
+    },
+    {
+      "feature": "SkinThickness",
+      "corr": 0.25949142216466015
+    },
+    {
+      "feature": "Age",
+      "corr": 0.23835598302719757
+    }
+  ],
+  "class_distribution": {
+    "Outcome_0": 0.6510416666666666,
+    "Outcome_1": 0.3489583333333333
+  },
+  "baseline_results": {
+    "logistic_regression": {
+      "accuracy": 0.7077922077922078,
+      "f1": 0.5454545454545454,
+      "roc_auc": 0.812962962962963
+    },
+    "random_forest": {
+      "accuracy": 0.7402597402597403,
+      "f1": 0.5918367346938775,
+      "roc_auc": 0.8158333333333333
+    }
+  },
+  "rf_top_feature_importance": [
+    {
+      "feature": "Glucose",
+      "importance": 0.2679307272238579
+    },
+    {
+      "feature": "BMI",
+      "importance": 0.1598475149125666
+    },
+    {
+      "feature": "DiabetesPedigreeFunction",
+      "importance": 0.12438079937910022
+    },
+    {
+      "feature": "Age",
+      "importance": 0.12135741148487539
+    },
+    {
+      "feature": "Insulin",
+      "importance": 0.09060439129568068
+    }
+  ],
+  "artifacts": {
+    "bmi_histogram": "/workspaces/openclawProject/data/diabetes_analysis/bmi_histogram.png",
+    "heatmap": "/workspaces/openclawProject/data/diabetes_analysis/correlation_heatmap.png",
+    "outcome_corr_csv": "/workspaces/openclawProject/data/diabetes_analysis/outcome_correlation.csv",
+    "summary_json": "/workspaces/openclawProject/data/diabetes_analysis/summary.json"
+  }
+}
